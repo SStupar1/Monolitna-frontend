@@ -1,0 +1,37 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <br/>
+    <!--NAME-->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name">Name</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input id="name" formControlName="name"/>
+      </nz-form-control>
+    </nz-form-item>
+    <!--PIB-->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="pib">PIB</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input id="pib" formControlName="pib"/>
+      </nz-form-control>
+    </nz-form-item>
+    <!--BANK ACCOUNT NUMBER-->
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="bankAccountNumber" >Bank Account Number</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="bankAccountNumber" formControlName="bankAccountNumber"/>
+        </nz-form-control>
+    </nz-form-item>
+    <!--ADDRESS-->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="address" >SSN</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input id="address" formControlName="address"/>
+      </nz-form-control>
+  </nz-form-item>
+    <!--Update-->
+    <nz-form-item nz-row class="create-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary" nzGhost>Update</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>

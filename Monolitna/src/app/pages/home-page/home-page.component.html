@@ -1,0 +1,42 @@
+<nz-layout class="layout">
+    <nz-header>
+      <div class="logo"></div>
+      <ul nz-menu nzTheme="dark" nzMode="horizontal">
+    
+        <li nz-menu-item *ngIf="isAdmin" (click)="updateAdmin()">Change your profile </li>
+        <li nz-menu-item *ngIf="isAgent" (click)="updateAgent()" >Change your profile </li>
+        <li nz-menu-item *ngIf="isSimpleUser" (click)="updateSimpleUser()">Change your profile </li>
+
+
+        <li nz-menu-item *ngIf="isAdmin" (click)="registrationRequests()">Registration requests</li>
+        <li nz-menu-item *ngIf="isAdmin" routerLink="/home-page/lists/activated">Activated users</li>
+        <li nz-menu-item *ngIf="isAdmin"  routerLink="/home-page/lists/blocked">Blocked users</li>
+        <li nz-menu-item *ngIf="isAdmin"  routerLink="/home-page/register-agent">Register agent</li>
+        <li nz-menu-item *ngIf="isAdmin" routerLink="/home-page/lists/comment-requests">Comment requests</li>
+        <li nz-submenu *ngIf="isAdmin"  nzTitle="Codebook">
+          <ul>
+            <li nz-menu-item routerLink="/home-page/lists/fuel-types">Fuel types</li>
+            <li nz-menu-item routerLink="/home-page/lists/car-classes">Car classes</li>
+            <li nz-menu-item routerLink="/home-page/lists/car-models">Car models</li>
+            <li nz-menu-item routerLink="/home-page/lists/car-brands">Car brands</li>
+            <li nz-menu-item routerLink="/home-page/lists/gearshift-types">Gearshift types </li>
+          </ul>
+        </li>
+
+   
+        <li nz-menu-item *ngIf="!isAdmin" routerLink="/home-page/new-items/add-ad">Create ad</li>
+        <li nz-menu-item *ngIf="!isAdmin" routerLink="/home-page/new-items/add-pricelist">Add pricelist</li>
+        <li nz-menu-item *ngIf="!isAdmin" routerLink="/home-page/lists/rent-ad-list">Rent a car</li>
+        <li nz-menu-item *ngIf="!isAdmin" routerLink="/home-page/lists/publisher-ad-list">List of my ads</li>
+        <li nz-menu-item *ngIf="!isAdmin" routerLink="/home-page/cart">My Cart</li>
+        <li nz-menu-item *ngIf="!isAdmin" routerLink="/home-page/lists/publisher-reservations">Reservation requests</li>
+        <li nz-menu-item *ngIf="!isAdmin" routerLink="/home-page/lists/publisher-bundles">Bundle requests</li>
+        <li nz-menu-item *ngIf="!isAdmin" routerLink="/home-page/lists/reservations-history">Reservations history</li>
+
+        <li nz-menu-item (click)="clearStorage()">Logout</li>
+      </ul>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>

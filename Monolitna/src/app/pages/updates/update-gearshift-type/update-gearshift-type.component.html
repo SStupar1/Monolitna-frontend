@@ -1,0 +1,23 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <!--TYPE-->
+    <br>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="type">Type</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input id="type" formControlName="type"/>
+      </nz-form-control>
+    </nz-form-item>
+    <!--NUMBER OF GEARS-->
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="numberOfGears" >Number of gears</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="numberOfGears" formControlName="numberOfGears"/>
+        </nz-form-control>
+    </nz-form-item>
+    <!--Update-->
+    <nz-form-item nz-row class="create-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary" nzGhost>Update</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
